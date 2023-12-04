@@ -9,7 +9,6 @@ using UnityEngine.SceneManagement;
 public class NPCSystemPong : MonoBehaviour
 {
     public GameObject d_template;
-    public GameObject d_template2;
     public GameObject canva;
 
     bool player_detection = false;
@@ -23,7 +22,7 @@ public class NPCSystemPong : MonoBehaviour
             NewDialogue("Hello");
             NewDialogue("If you want to play pong klick Y");
             canva.transform.GetChild(0).gameObject.SetActive(true);
-            Invoke(nameof(SwitchText), 2f);
+            Invoke(nameof(SwitchText), 1.5f);
         }
 
         if(Input.GetKeyDown(KeyCode.Y))
@@ -33,8 +32,11 @@ public class NPCSystemPong : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex - 1;
-            SceneManager.LoadScene(sceneBuildIndex);
+            if(SceneManager.GetActiveScene().buildIndex > 0)
+            {
+                int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex - 1;
+                SceneManager.LoadScene(sceneBuildIndex);
+            }
         }
 
     }
