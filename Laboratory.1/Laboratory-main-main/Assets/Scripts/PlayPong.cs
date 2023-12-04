@@ -7,9 +7,16 @@ using UnityEngine.SceneManagement;
 
 public class PlayPong : MonoBehaviour
 {
-    public void ChangeScene()
+    public void ChangeScene(string sceneName) 
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+         if(Input.GetKeyDown(KeyCode.E))
+         {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            // SceneManager.LoadScene(sceneName);
+         }
+
+
     }
 
 }
