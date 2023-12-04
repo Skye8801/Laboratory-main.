@@ -31,6 +31,12 @@ public class NPCSystemPong : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            int sceneBuildIndex = SceneManager.GetActiveScene().buildIndex - 1;
+            SceneManager.LoadScene(sceneBuildIndex);
+        }
+
     }
 
     void SwitchText()
